@@ -1,0 +1,2 @@
+export { fibonacci } from './fibonacci';
+

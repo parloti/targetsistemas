@@ -1,0 +1,30 @@
+<h1>Filter Array</h1>
+
+<div>
+  <div fxLayout="row"
+       fxLayoutAlign="start start">
+    <div class="col1">
+      <div>
+        <label for="filter">Insert value: </label>
+        <input class="ms-1"
+               type="number"
+               min="0"
+               max="10"
+               step="1"
+               id="filter"
+               [formControl]="filterControle" />
+      </div>
+      <app-blinker (blinkingStopped)="onBlinked()"
+                   [blinking]="blinking"
+                   [content]="filteredValues"></app-blinker>
+    </div>
+
+    <div matRipple
+         [matRippleUnbounded]="true"
+         [matRippleCentered]="true"
+         [matRippleRadius]="18"
+         title="Filter"
+         class="ng filter-button ms-5"
+         (click)="filter()"></div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<h1>Fibonacci Sequence</h1>
+<div fxLayout="row"
+     fxLayoutAlign="start center">
+  <div class="col1">
+    <label>Current term: </label>
+    <app-blinker (blinkingStopped)="onBlinked()"
+                 [blinking]="blinking"
+                 [content]="value"></app-blinker>
+  </div>
+
+  <button class="ms-5"
+          mat-raised-button
+          color="primary"
+          (click)="calculateNextTerm()">Next term</button>
+</div>

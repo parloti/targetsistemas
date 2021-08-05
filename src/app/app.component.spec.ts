@@ -1,11 +1,16 @@
 import { TestBed } from '@angular/core/testing';
+import { MatDivider } from '@angular/material/divider';
+import { MockComponents } from 'ng-mocks';
 import { AppComponent } from './app.component';
+import { FibonacciComponent } from './fibonacci/fibonacci.component';
+import { FilterArrayComponent } from './filter-array/filter-array.component';
+import { ShowHideImageComponent } from './show-hide-image/show-hide-image.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,MockComponents(FibonacciComponent,MatDivider,ShowHideImageComponent,FilterArrayComponent)
       ],
     }).compileComponents();
   });
@@ -14,18 +19,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'targetsistemas'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('targetsistemas');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('targetsistemas app is running!');
   });
 });

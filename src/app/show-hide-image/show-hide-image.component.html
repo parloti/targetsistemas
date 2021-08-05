@@ -1,0 +1,22 @@
+<h1>Show Hide Image</h1>
+
+<div>
+  <div fxLayout="row"
+       fxLayoutAlign="start center">
+    <div class="col1">
+      <label>Current status: </label>
+      <app-blinker (blinkingStopped)="onBlinked()"
+                   [blinking]="blinking"
+                   [content]="visible?'Visível' : 'Invisível'"></app-blinker>
+
+    </div>
+
+    <button class="switch-status ms-5"
+            mat-raised-button
+            color="primary"
+            (click)="switchStatus()">{{visible? "Hide":"Show"}}</button>
+
+  </div>
+  <div class="ng"
+       *ngIf="visible"></div>
+</div>
